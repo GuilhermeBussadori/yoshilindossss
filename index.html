@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Verificação de conta do Discord">
+    <meta name="author" content="Yoshi Devs">
+    <meta name="referrer" content="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Verificação Discord</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ff0000;
+        }
+        .verification-container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+        h1 {
+            color: #333333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ff0000;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        i.fab {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="verification-container">
+        <h1>Verificação Discord</h1>
+        <p>Clique no botão abaixo para verificar sua conta.</p>
+        <button onclick="authorizeDiscord()">
+            <i class="fab fa-discord"></i> Verificar Via Discord
+        </button>
+    </div>
+
+    <script>
+        function authorizeDiscord() {
+            window.location.href = 'https://discord.com/api/oauth2/authorize?client_id=1094626914020380672&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth-callback&scope=identify+guilds.join';
+        }
+    </script>
+</body>
+</html>
